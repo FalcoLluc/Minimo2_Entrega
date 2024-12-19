@@ -1,1 +1,5 @@
 # Minimo2_Entrega
+Está todo hecho. He hecho una pequeña modificación, y es que ya que en nuestro proyecto hemos basado el proceso de autentificación en Cookies, es decir, el servidor después de hacer el Login puede saber a que usuario pertenece la petición basandose en la Cookie que el cliente adjunta, he pensado que era más lógico evitar que el usuario introduciera su nombre (se podría hacer pasar por otro), y en vez de eso el servidor a través de la Cookie adjuntada comprueba el usuario que es y printea el nombre que ha conseguido. De esta forma, el usuario introduce el título y un mensaje, el cliente adjunta a la petición (internamente)la fecha que es, y adjunta la cookie que el servidor podrá usar para reconocer el usuario.
+
+La Puedes Abrir la Activity una vez logeado en la Activity "MultiActivity", clickando el botón "Submit a Question". El nuevo servicio en el servidor está implementado en "QuestionService"
+-> Para logearse, se puede registar un usuario nuevo o bien usar uno ya creado, por ejemplo, user: Lluc, password: Falco12

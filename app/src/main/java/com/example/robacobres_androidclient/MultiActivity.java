@@ -159,6 +159,11 @@ public class MultiActivity extends AppCompatActivity implements AuthCallback, Us
 
     }
 
+    public void onClickQuest(View v){
+        Intent intent = new Intent(context, Formulario_Dudas_Minimo2.class);
+        context.startActivity(intent);
+    }
+
     @Override
     public void onDeleteUser(){
         Intent intent = new Intent(context, LogInActivity.class);

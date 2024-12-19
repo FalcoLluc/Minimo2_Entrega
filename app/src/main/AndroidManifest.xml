@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Formulario_Dudas_Minimo2"
+            android:exported="false" />
+        <activity
             android:name=".VenderCobreActivity"
             android:exported="false" />
         <activity

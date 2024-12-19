@@ -9,6 +9,7 @@ import com.example.robacobres_androidclient.callbacks.ChargeDataCallback;
 import com.example.robacobres_androidclient.callbacks.ForumCallback;
 import com.example.robacobres_androidclient.callbacks.ItemCallback;
 import com.example.robacobres_androidclient.callbacks.PrivateCallback;
+import com.example.robacobres_androidclient.callbacks.QuestionCallback;
 import com.example.robacobres_androidclient.callbacks.UserCallback;
 import com.example.robacobres_androidclient.interceptors.AddCookiesInterceptor;
 import com.example.robacobres_androidclient.interceptors.ReceivedCookiesInterceptor;
@@ -17,6 +18,7 @@ import com.example.robacobres_androidclient.models.ChatIndividual;
 import com.example.robacobres_androidclient.models.Forum;
 import com.example.robacobres_androidclient.models.GameCharacter;
 import com.example.robacobres_androidclient.models.Item;
+import com.example.robacobres_androidclient.models.Question;
 import com.example.robacobres_androidclient.models.User;
 
 import java.util.ArrayList;
@@ -764,6 +766,30 @@ public class ServiceBBDD {
             @Override
             public void onFailure(Call<List<ChatIndividual>> call, Throwable t) {
                 Log.e("API_ERROR", "API call failed", t);
+            }
+        });
+    }
+
+
+    public void submitQuestion(String title, String message, String date, final QuestionCallback callback) {
+
+        Question body = new Question(title,message,date);
+        Call<Question> call = serv.submitQuesion(body);
+        call.enqueue(new Callback<Question>() {
+            @Override
+            public void onResponse(Call<Question> call, Response<Question> response) {
+                if (response.code() == 201) {
+                    Question q= response.body();
+                    callback.onSubmittedOK(q);
+                } else {
+                    callback.onSubmittedError();
+                    Log.d("API_RESPONSE", "ERROR");
+                }
+            }
+            @Override
+            public void onFailure(Call<Question> call, Throwable t) {
+                Log.e("API_ERROR", "API call failed", t);
+                callback.onSubmittedError();
             }
         });
     }

@@ -115,20 +115,6 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/Button_VerMisDatos"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
-        android:layout_below="@id/Button_Mispersonajes"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/button_gradient"
-        android:fontFamily="fantasy"
-        android:onClick="onClickSeeMyData"
-        android:text="VER MIS DATOS"
-        android:textColor="#000000"
-        android:textStyle="bold" />
-
-    <Button
         android:id="@+id/Button_eliminarcuenta"
         android:layout_width="115dp"
         android:layout_height="115dp"
@@ -144,11 +130,42 @@
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/Button_VerMisDatos"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_below="@id/Button_Mispersonajes"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_gradient"
+        android:fontFamily="fantasy"
+        android:onClick="onClickSeeMyData"
+        android:text="VER MIS DATOS"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <!-- Nuevo botón para abrir nueva Activity -->
+    <Button
+        android:id="@+id/Button_nuevaActivity"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/Button_VerMisDatos"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_gradient"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="onClickQuest"
+        android:text="Submit a Question"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
         android:id="@+id/Button_logout"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/Button_nuevaActivity"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/button_gradient_logout"
         android:fontFamily="sans-serif-medium"
@@ -181,8 +198,8 @@
         android:layout_marginBottom="1dp"
         android:text="Private"
         android:textAlignment="center" />
-
 </RelativeLayout>
+
 
 
 

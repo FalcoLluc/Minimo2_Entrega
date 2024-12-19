@@ -5,6 +5,7 @@ import com.example.robacobres_androidclient.models.ChatIndividual;
 import com.example.robacobres_androidclient.models.Forum;
 import com.example.robacobres_androidclient.models.GameCharacter;
 import com.example.robacobres_androidclient.models.Item;
+import com.example.robacobres_androidclient.models.Question;
 import com.example.robacobres_androidclient.models.User;
 
 import java.util.List;
@@ -103,19 +104,7 @@ public interface ServidorBBDD {
     @GET("store/CharactersUserCanBuy") //ARREGLAR
     Call<List<GameCharacter>> getCharactersUserCanBuy();
 
-
-    /*
-    //DELETE
-    @DELETE("tracks/{id}")
-    Call<Void> deleteTrack(@Path("id") String id);
-
-
-    //PUT
-    @PUT("tracks")
-    Call<Void> putTrack(@Body Track track);
-
-    //POST
-    @POST("tracks")
-    Call<Track> postTrack(@Body Track track);
-     */
+    //PARTE MINIMO 2
+    @POST("question")
+    Call<Question> submitQuesion(@Body Question question);
 }
